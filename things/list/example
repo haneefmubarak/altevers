@@ -1,0 +1,65 @@
+// Comments begin with double slashes and go until the end of the line,
+// but they must start at the beginning of a line
+
+// Lines have an length factor of 256B, so after editing, process them
+// (pad w/ 0x00) to make the length of each line be a multiple of 256B
+
+// At the beginning of a line, put in a 0xFF to allow quick line skips
+
+// Therefore, a line is defined as a continuous piece of data that does
+// not contain 0xFF at a multiple of 256B from the file start
+
+// Still, you should put "//" at the beginning of your lines for easy
+// reading
+
+// This may seem extremely wasteful, but it allows for much, much faster
+// automated file perusal, so we just compensate via compression
+
+// ":" is a field separator, use it to separate fields as such:
+
+thing:		example
+
+// `thing` is the title of the, well, thing, and processing starts and
+// goes down from here
+
+// Align the var (primary field) to the zeroth tab-column, and the value
+// (secondary field) to the second tab-column to make it look nice
+
+// Speaking of alignment, wrap around roughly around the ninth tab-column
+
+// Neither `altern` nor `versus` give a shit about your fancy punctuation,
+// so after the first ":" or the "//" at the beginning of the line
+// (whichever comes first) you can have whatever normal ASCII characters
+// you want to use, which will be directly quoted and used (so, unlike
+// many programs, where:
+//
+//	Input		Output
+//
+//	"bob" --------> bob
+//
+// with `altern` and/or `versus`:
+//
+//	Input		Output
+//
+//	"bob" --------> "bob"
+//
+//	bob   --------> bob
+
+tags:		example
+
+// tag up a thing with any related tags, then throw a symlink to the
+// list item of the thing in each tag's folder
+
+// tags are space separated, btw
+
+// in each tag's folder, there should be a format file with a list of
+// all of the extra fields and shit it has
+
+// use all of the fields
+
+// some might even have tests that have to be done, so do them and throw
+// the results into wherever it says to
+
+// That's it! (for now...)
+
+// For a good example of a file, have a look at `nano`
